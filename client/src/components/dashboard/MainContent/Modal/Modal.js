@@ -62,13 +62,13 @@ class Modal extends Component {
     this.setState({ members: array });
   };
 
-  createProject = () => {
+  createProject = () => {   // modal Function
     let project = {
       projectName: this.state.projectName,
       members: this.state.members
     };
 
-    this.props.createProject(project);
+    this.props.createProject(project);  // action function
     this.onClose();
   };
 
@@ -290,7 +290,7 @@ class Modal extends Component {
             <div className="split">
               <label>
                 <div className="form-label">Assignee</div>
-                <select
+                <select  //dropdown
                   onChange={this.onSelectChange}
                   value={this.state.assignee}
                   id="assignee"
@@ -301,7 +301,7 @@ class Modal extends Component {
                     Assign to
                   </option>
                   <option value={email}>{name + " (You)"}</option>
-                  {membersOptions}
+                  {membersOptions}  //
                 </select>
               </label>
               <label>
@@ -345,6 +345,7 @@ class Modal extends Component {
         </form>
       );
     }
+
 
     // Edit Task Modal
     else if (this.props.editTask) {
